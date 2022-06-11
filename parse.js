@@ -1,8 +1,10 @@
+require("dotenv").config();
+
 const fs = require("fs");
 const readline = require("readline");
 const nginxLogParser = require("nginx-log-parser");
 
-const FILE_PATH = "[FILE_PATH]";
+const FILE_PATH = process.env.LOG_FILE_PATH;
 const LOG_FORMAT =
   "$remote_addr - $remote_user [$time_local] " +
   '"$request" $status $body_bytes_sent "$http_referer" "$http_user_agent"';
